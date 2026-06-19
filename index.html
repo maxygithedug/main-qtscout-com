@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>球探 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f4f6fa;
+      line-height: 1.7;
+      color: #1e293b;
+    }
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1a2e, #192f44);
+      color: #e6edf5;
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: #eab308;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    .hero .tagline {
+      display: inline-block;
+      background: rgba(234, 179, 8, 0.15);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #facc15;
+      margin-top: 20px;
+      border: 1px solid rgba(234, 179, 8, 0.25);
+    }
+    /* 正文区（浅色） */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 60px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 20px;
+      border-left: 5px solid #eab308;
+      padding-left: 18px;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px 22px;
+      flex: 1 1 240px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border: 1px solid #e9edf2;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #1e293b;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+    .card .icon {
+      display: inline-block;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: #eab308;
+    }
+    /* 强调色链接（自然嵌入句子） */
+    a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+    a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .highlight-box {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 28px;
+      margin: 40px 0;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .highlight-box h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+      color: #0f172a;
+    }
+    .highlight-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .highlight-box li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: #334155;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .highlight-box li:last-child {
+      border-bottom: none;
+    }
+    .highlight-box li::before {
+      content: '◆';
+      position: absolute;
+      left: 4px;
+      color: #eab308;
+      font-size: 0.75rem;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      border: 1px solid #e9edf2;
+    }
+    .faq-item .question {
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .faq-item .answer {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+    .footnote {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #d1d9e6;
+      color: #64748b;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .card-grid { flex-direction: column; }
+      .container { padding: 32px 18px 48px; }
+      .highlight-box { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>球探 · 数据驱动的观察工具</h1>
+    <p>围绕体育人才与赛事表现，梳理信息、辅助判断，提供结构化的参考视图。</p>
+    <span class="tagline">⚽ 专注 · 中立 · 可追溯</span>
+  </header>
+
+  <!-- 正文区（浅色） -->
+  <main class="container">
+
+    <!-- 摘要 -->
+    <section>
+      <h2 class="section-title">产品摘要</h2>
+      <p style="margin-bottom: 16px;">
+        <strong>球探</strong> 是一个面向体育观察与人才评估的信息平台。不同于泛资讯站点，它更强调数据的整理与对比，帮助使用者在繁杂的赛事信息中快速定位关注要点。平台本身不提供预测结论，也不代替专业判断，而是以结构化的方式呈现可查阅的参考内容。
+      </p>
+      <p>
+        无论是青训教练、数据分析爱好者，还是关注转会市场的球迷，都可以把 <a href="https://main-qtscout.com">球探</a> 当作一个辅助信息节点，结合自己的经验与视频素材综合评估。
+      </p>
+    </section>
+
+    <!-- 亮点卡片 -->
+    <section style="margin-top: 48px;">
+      <h2 class="section-title">几个值得留意的特点</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>多维标签体系</h3>
+          <p>球员、比赛、联赛等条目均附带可筛选的标签，方便按位置、年龄段、赛季等维度交叉浏览。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧩</div>
+          <h3>模块化对比</h3>
+          <p>支持将多名球员的核心指标并排展示，减少来回切换页面的繁琐，更适合横向参考。</p>
+        </div>
+        <div class="card">
+          <div class="icon">📅</div>
+          <h3>历史数据沉淀</h3>
+          <p>覆盖近三个赛季的主要联赛数据，可回溯表现趋势，但数据更新频率与官方统计保持合理间隔。</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔍</div>
+          <h3>来源可溯</h3>
+          <p>每条数据旁均附带简要来源或统计口径说明，不混淆原始数据与二次解读。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 使用建议 + 可信但克制的说明 -->
+    <div class="highlight-box">
+      <h2>使用建议 · 一些值得了解的前提</h2>
+      <ul>
+        <li><strong>数据本身不构成决策依据。</strong> 任何关于球员潜力或转会价值的结论，都需要结合现场观察、医疗报告、心理评估等多维度信息。</li>
+        <li><strong>适合作为第一道过滤工具。</strong> 当面对成百上千的年轻球员名单时，球探提供的数据维度可以帮助缩小关注范围，但最终筛选仍依赖专业视角。</li>
+        <li><strong>留意统计口径。</strong> 不同联赛、不同赛季的统计标准可能存在细微差异，对比时建议留意数据旁边的备注说明。</li>
+        <li><strong>开放但克制的访问。</strong> 平台大部分内容可直接查看，部分深度对比功能可能需要注册账户，但不会收集不必要的个人信息。</li>
+      </ul>
+    </div>
+
+    <!-- 场景示意 -->
+    <section style="margin-top: 32px;">
+      <h2 class="section-title">适用场景举例</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="flex: 1 1 200px; background: #f8fafc; border-radius: 12px; padding: 18px 16px;">
+          <p style="font-weight: 500; color: #0f172a;">📌 青训球探</p>
+          <p style="font-size: 0.9rem; color: #475569;">从地区联赛中快速筛选出符合年龄要求的球员，导出数据报告供后续实地考察参考。</p>
+        </div>
+        <div style="flex: 1 1 200px; background: #f8fafc; border-radius: 12px; padding: 18px 16px;">
+          <p style="font-weight: 500; color: #0f172a;">📌 数据分析爱好者</p>
+          <p style="font-size: 0.9rem; color: #475569;">利用公开的统计口径，验证自己的分析模型或探索不同位置的关键指标差异。</p>
+        </div>
+        <div style="flex: 1 1 200px; background: #f8fafc; border-radius: 12px; padding: 18px 16px;">
+          <p style="font-weight: 500; color: #0f172a;">📌 媒体内容参考</p>
+          <p style="font-size: 0.9rem; color: #475569;">在撰写球员观察文章时，借助平台的数据截图或对比表格作为事实支撑，注明来源即可。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section style="margin-top: 48px;">
+      <h2 class="section-title">常见问题摘要</h2>
+      <div class="faq-item">
+        <div class="question">数据更新频率是多少？</div>
+        <div class="answer">主要联赛数据通常在比赛结束后 48 小时内完成结构化整理，部分低级别联赛或杯赛可能延迟 3–5 天。</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">是否需要付费？</div>
+        <div class="answer">浏览球员基本信息、联赛数据以及简单对比功能完全免费。深度检索、批量导出等附加功能采用订阅制，订阅前可免费试用部分权益。</div>
+      </div>
+      <div class="faq-item">
+        <div class="question">数据来源可靠吗？</div>
+        <div class="answer">平台的数据主要来自公开的赛事统计机构及官方比赛报告，并经过多轮交叉校验。但任何统计系统都存在少数偏差，建议将数据作为参考而非唯一标准。</div>
+      </div>
+    </section>
+
+    <!-- 页脚 / 说明 -->
+    <div class="footnote">
+      <p>本页面为产品介绍页，内容经过整理与核对，保持中立、克制的表述。<br>如想进一步了解，可直接浏览 <a href="https://main-qtscout.com">球探</a> 网站本身。</p>
+      <p style="margin-top: 14px; font-size: 0.8rem; opacity: 0.6;">方向：产品说明式 · 深色头图 / 浅色正文 / 强调色链接</p>
+    </div>
+
+  </main>
+
+</body>
+</html>
